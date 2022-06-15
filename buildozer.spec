@@ -5,13 +5,13 @@
 [app]
 
 # (str) Title of your application
-title = induperator
+title = Zeher
 
 # (str) Package name
-package.name = induperator
+package.name = Zeher
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.induperator.edu
+package.domain = org.Zeher.edu
 
 # (str) Source code where the main.py live
 source.dir = .
