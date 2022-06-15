@@ -1,0 +1,169 @@
+WindowManager:
+
+    MainScreen:
+    FirstWindow:
+        id: First
+    SecondWindow:
+        id: Second
+    ThirdWindow:
+        id: Third
+    ResultScreen:
+        id: RScreen
+    ResultScreen1:
+        id: RScreen1
+    ResultScreen2:
+        id: RScreen2
+
+<MainScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: "ВЫБЕРИТЕ КАТЕГОРИЮ"
+        Button:
+            text: "ОДНО ОКНО"
+            on_release:
+                app.root.current = "1okno"
+        Button:
+            text: "ДВА ОКНА"
+            on_release:
+                app.root.current = "2okna"
+        Button:
+            text: "ДВА РАЗНЫХ ОКНА"
+            on_release:
+                app.root.current = "2oknar"
+
+<FirstWindow>:
+    name: "1okno"   
+    BoxLayout:
+        id: palki
+        orientation: "vertical"
+        size: root.width, root.height
+        Label:
+            text: "КОЛИЧЕСТВО РЕШЕТОК"
+            font_size: 32
+        TextInput:
+            id: input1
+            multiline: False
+            size_hint: (1, .5)
+        Label:
+            text: "КОЛИЧЕСТВО ПЛАШЕК"
+            font_size: 32
+        TextInput:
+            id: input2
+            multiline: False
+            size_hint: (1, .5)
+        Button:
+            text: "ДАЛЕЕ"
+            font_size: 32
+            on_press: root.Ras1()
+            on_release:
+                app.root.current = "result"
+                root.manager.transition.direction = "left"
+            
+
+<SecondWindow>:
+    name: "2okna"
+    BoxLayout:
+        id: palki1
+        orientation: "vertical"
+        size: root.width, root.height
+        Label:
+            text: "КОЛИЧЕСТВО ОКОН"
+            font_size: 32
+        TextInput:
+            id: input3
+            multiline: False
+            size_hint: (1, .5)
+        Label:
+            text: "КОЛИЧЕСТВО ПЛАШЕК"
+            font_size: 32
+        TextInput:
+            id: input4
+            multiline: False
+            size_hint: (1, .5)
+        Button:
+            text: "ДАЛЕЕ"
+            font_size: 32
+            on_press: root.Ras2()
+            on_release:
+                app.root.current = "result1"
+                root.manager.transition.direction = "left"
+
+<ThirdWindow>:
+    name: "2oknar"
+    BoxLayout:
+        id: palki2
+        orientation: "vertical"
+        size: root.width, root.height
+        Label:
+            text: "КОЛИЧЕСТВО ОКОН"
+            font_size: 32
+        TextInput:
+            id: input5
+            multiline: False
+            size_hint: (1, .5)
+        Label:
+            text: "КОЛИЧЕСТВО ПЛАШЕК"
+            font_size: 32
+        TextInput:
+            id: input6
+            multiline: False
+            size_hint: (1, .5)
+        TextInput:
+            id: input7
+            multiline: False
+            size_hint: (1, .5)
+        Button:
+            text: "ДАЛЕЕ"
+            font_size: 32
+            on_press: root.Ras3()
+            on_release:
+                app.root.current = "result2"
+                root.manager.transition.direction = "left"
+
+<ResultScreen>:
+    name: "result"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        Label:
+            id: recup_infos
+            font_size: 32
+            color: 'white'
+        Button:
+            text: "РАССЧИТАТЬ"
+            font_size: 32
+            on_press:
+                root.on_press()
+
+<ResultScreen1>:
+    name: "result1"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        Label:
+            id: res
+            font_size: 32
+            color: 'white'
+        Button:
+            text: "РАССЧИТАТЬ"
+            font_size: 32
+            on_press:
+                root.on_press1()
+
+<ResultScreen2>:
+    name: 'result2'
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        Label:
+            id: res1
+            font_size: 32
+            color: 'white'
+        Button:
+            text: "РАССЧИТАТЬ"
+            font_size: 32
+            on_press:
+                root.on_press2()
+
+    
